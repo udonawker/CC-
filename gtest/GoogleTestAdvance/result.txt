@@ -1,0 +1,103 @@
+$ test/sample_test_fixture
+Running main() from gmock_main.cc
+[==========] Running 18 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 3 tests from SamplePredTest
+[ RUN      ] SamplePredTest.IsPrimePred
+/home/user/GTEST_MT/GoogleTestAdvance/test/test_fixture.cpp:63: Failure
+AssertPredHelper(sample)(num) evaluates to false, where
+num evaluates to 1
+[  FAILED  ] SamplePredTest.IsPrimePred (1 ms)
+[ RUN      ] SamplePredTest.IsPrimeAssertionResult
+/home/user/GTEST_MT/GoogleTestAdvance/test/test_fixture.cpp:69: Failure
+Value of: IsPrime(num)
+  Actual: false ("1" ÇÕëfêîÇ≈ÇÕÇ»Ç¢)
+Expected: true
+[  FAILED  ] SamplePredTest.IsPrimeAssertionResult (0 ms)
+[ RUN      ] SamplePredTest.IsPrimePredFormat
+/home/user/GTEST_MT/GoogleTestAdvance/test/test_fixture.cpp:75: Failure
+"num" ÇÃílÇÕ "4" ëfêîÇ≈ÇÕÇ»Ç¢
+[  FAILED  ] SamplePredTest.IsPrimePredFormat (0 ms)
+[----------] 3 tests from SamplePredTest (1 ms total)
+
+[----------] 10 tests from ParameterTest/SamplePredParameterTest
+[ RUN      ] ParameterTest/SamplePredParameterTest.ParameterTest/0
+/home/user/GTEST_MT/GoogleTestAdvance/test/test_fixture.cpp:94: Failure
+Value of: IsPrime(GetParam())
+  Actual: false ("1" ÇÕëfêîÇ≈ÇÕÇ»Ç¢)
+Expected: true
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/0, where GetParam() = 1 (0 ms)
+[ RUN      ] ParameterTest/SamplePredParameterTest.ParameterTest/1
+[       OK ] ParameterTest/SamplePredParameterTest.ParameterTest/1 (0 ms)
+[ RUN      ] ParameterTest/SamplePredParameterTest.ParameterTest/2
+[       OK ] ParameterTest/SamplePredParameterTest.ParameterTest/2 (0 ms)
+[ RUN      ] ParameterTest/SamplePredParameterTest.ParameterTest/3
+/home/user/GTEST_MT/GoogleTestAdvance/test/test_fixture.cpp:94: Failure
+Value of: IsPrime(GetParam())
+  Actual: false ("4" ÇÕëfêîÇ≈ÇÕÇ»Ç¢)
+Expected: true
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/3, where GetParam() = 4 (0 ms)
+[ RUN      ] ParameterTest/SamplePredParameterTest.ParameterTest/4
+[       OK ] ParameterTest/SamplePredParameterTest.ParameterTest/4 (0 ms)
+[ RUN      ] ParameterTest/SamplePredParameterTest.ParameterTest/5
+/home/user/GTEST_MT/GoogleTestAdvance/test/test_fixture.cpp:94: Failure
+Value of: IsPrime(GetParam())
+  Actual: false ("6" ÇÕëfêîÇ≈ÇÕÇ»Ç¢)
+Expected: true
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/5, where GetParam() = 6 (0 ms)
+[ RUN      ] ParameterTest/SamplePredParameterTest.ParameterTest/6
+[       OK ] ParameterTest/SamplePredParameterTest.ParameterTest/6 (0 ms)
+[ RUN      ] ParameterTest/SamplePredParameterTest.ParameterTest/7
+/home/user/GTEST_MT/GoogleTestAdvance/test/test_fixture.cpp:94: Failure
+Value of: IsPrime(GetParam())
+  Actual: false ("8" ÇÕëfêîÇ≈ÇÕÇ»Ç¢)
+Expected: true
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/7, where GetParam() = 8 (0 ms)
+[ RUN      ] ParameterTest/SamplePredParameterTest.ParameterTest/8
+/home/user/GTEST_MT/GoogleTestAdvance/test/test_fixture.cpp:94: Failure
+Value of: IsPrime(GetParam())
+  Actual: false ("9" ÇÕëfêîÇ≈ÇÕÇ»Ç¢)
+Expected: true
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/8, where GetParam() = 9 (0 ms)
+[ RUN      ] ParameterTest/SamplePredParameterTest.ParameterTest/9
+/home/user/GTEST_MT/GoogleTestAdvance/test/test_fixture.cpp:94: Failure
+Value of: IsPrime(GetParam())
+  Actual: false ("10" ÇÕëfêîÇ≈ÇÕÇ»Ç¢)
+Expected: true
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/9, where GetParam() = 10 (0 ms)
+[----------] 10 tests from ParameterTest/SamplePredParameterTest (0 ms total)
+
+[----------] 5 tests from MultiParameterTest/SampleMultiParameterTest
+[ RUN      ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/0
+[       OK ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/0 (0 ms)
+[ RUN      ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/1
+[       OK ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/1 (0 ms)
+[ RUN      ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/2
+[       OK ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/2 (0 ms)
+[ RUN      ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/3
+[       OK ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/3 (0 ms)
+[ RUN      ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/4
+/home/user/GTEST_MT/GoogleTestAdvance/test/test_fixture.cpp:118: Failure
+Value of: sample.Add(std::get<0>(param), std::get<1>(param))
+  Actual: 384
+Expected: std::get<2>(param)
+Which is: 0
+[  FAILED  ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/4, where GetParam() = (128, 256, 0) (0 ms)
+[----------] 5 tests from MultiParameterTest/SampleMultiParameterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 18 tests from 3 test cases ran. (1 ms total)
+[  PASSED  ] 8 tests.
+[  FAILED  ] 10 tests, listed below:
+[  FAILED  ] SamplePredTest.IsPrimePred
+[  FAILED  ] SamplePredTest.IsPrimeAssertionResult
+[  FAILED  ] SamplePredTest.IsPrimePredFormat
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/0, where GetParam() = 1
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/3, where GetParam() = 4
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/5, where GetParam() = 6
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/7, where GetParam() = 8
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/8, where GetParam() = 9
+[  FAILED  ] ParameterTest/SamplePredParameterTest.ParameterTest/9, where GetParam() = 10
+[  FAILED  ] MultiParameterTest/SampleMultiParameterTest.MultiParameterTest/4, where GetParam() = (128, 256, 0)
+
+10 FAILED TESTS
