@@ -4,7 +4,7 @@
 #include <numeric>//std::accumulate()
 #include <stdexcept>
 #include <cctype>//std::isdigit()
-// g++  -std=c++11 -o  lambda_test lambda_test.cpp
+// g++ -std=c++11 -o lambda_accumulate_test lambda_accumulate_test.cpp
 int calc_check_digit(const std::string& num) noexcept(false) {
     if (11 != num.length()) throw std::runtime_error("num.digit must be 11");
     const int remainder = std::accumulate(num.rbegin(), num.rend(), std::pair<int, int>{}, [](const std::pair<int, int>& s, const char& e){
