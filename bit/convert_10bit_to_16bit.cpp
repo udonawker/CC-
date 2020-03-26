@@ -1,7 +1,7 @@
 #include <cstdint>
 #include <iostream>
 
-// g++ -std=c++11 -o bit_field_test bit_field_test.cpp
+// g++ -std=c++11 -o convert_10bit_to_16bit convert_10bit_to_16bit.cpp
 
 struct bit_field {
     std::uint64_t    a : 10;
