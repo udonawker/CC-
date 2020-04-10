@@ -29,10 +29,8 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    int width = std::stoi(std::string(argv[1]));
-    int height = std::stoi(std::string(argv[2]));
-    std::ifstream infile(argv[3], std::ios::in | std::ios::binary);
-    std::ofstream outfile(argv[4], std::ios::out | std::ios::binary);
+    std::ifstream infile(argv[1], std::ios::in | std::ios::binary);
+    std::ofstream outfile(argv[2], std::ios::out | std::ios::binary);
     infile.seekg(0, std::ios::end);
     auto fileSize = infile.tellg();
     infile.seekg(0, std::ios::beg);
