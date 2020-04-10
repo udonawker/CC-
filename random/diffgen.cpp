@@ -4,6 +4,23 @@
 #include <random>
 
 // g++ -std=c++11 -o diffgen diffgen.cpp
+static int generateDiffX(
+    const std::vector<std::uint8_t>&    input,
+    std::vector<std::uint8_t>&          output
+)
+{
+    std::random_device seed_gen;
+    std::default_random_engine engine(seed_gen());
+    std::uniform_int_distribution<> dist1(1, 4); 
+    std::bernoulli_distribution dist3(0.2);
+
+    for (int i = 0; i < (int)input.size(); i++) {
+        int shift = dist3(engine) ? dist1(engine) : 0;
+        output[i] = input[i] >> shift;
+    }   
+
+    return 0;
+}
 
 static int generateDiff(
     const std::vector<std::uint8_t>&    input,
