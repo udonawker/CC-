@@ -12,13 +12,17 @@ static int generateDiff(
 {
     std::random_device seed_gen;
     std::default_random_engine engine(seed_gen());
-    std::uniform_int_distribution<> dist1(1, 4);
+    std::uniform_int_distribution<> dist1(1, 4); 
     std::bernoulli_distribution dist3(0.2);
 
-    for (int i = 0; i < (int)input.size(); i++) {
-        int shiftBit = dist3(engine) ? dist1(engine) : 0;
-        output[i] = input[i] >> shiftBit;
+    std::copy(input.begin(), input.end(), output.begin());
+
+    for (int i = 0; i < (int)output.size(); i++) {
+        if (dist3(engine)) {
+            output[i] = output[i] >> dist1(engine);
+        }
     }
+
     return 0;
 }
 
