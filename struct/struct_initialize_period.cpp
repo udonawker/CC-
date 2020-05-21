@@ -29,6 +29,10 @@ const StructInitializePeriod::struct_x StructInitializePeriod::YYY = {
     }
 };
 
+const StructInitializePeriod::struct_z StructInitializePeriod::ZZZ {
+    .px = &YYY
+};
+
 void StructInitializePeriod::printXXX() {
     std::cout << "XXX.x         = " << XXX.x << std::endl;
     std::cout << "XXX.buff[0].a = " << XXX.buff[0].a << std::endl;
@@ -45,3 +49,10 @@ void StructInitializePeriod::printYYY() {
     std::cout << "YYY.buff[1].b = " << YYY.buff[1].b << std::endl;
 }
 
+void StructInitializePeriod::printZZZ() {
+    std::cout << "ZZZ.px->x         = " << ZZZ.px->x << std::endl;
+    std::cout << "ZZZ.px->buff[0].a = " << ZZZ.px->buff[0].a << std::endl;
+    std::cout << "ZZZ.px->buff[0].b = " << ZZZ.px->buff[0].b << std::endl;
+    std::cout << "ZZZ.px->buff[1].a = " << ZZZ.px->buff[1].a << std::endl;
+    std::cout << "ZZZ.px->buff[1].b = " << ZZZ.px->buff[1].b << std::endl;
+}

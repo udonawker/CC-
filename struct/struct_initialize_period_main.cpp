@@ -7,6 +7,7 @@ int main()
     StructInitializePeriod test;
     test.printXXX();
     test.printYYY();
+    test.printZZZ();
     return 0;
 }
 /*
@@ -21,5 +22,10 @@ YYY.buff[0].a = 3
 YYY.buff[0].b = 4
 YYY.buff[1].a = 30
 YYY.buff[1].b = 40
+ZZZ.px->x         = 3
+ZZZ.px->buff[0].a = 3
+ZZZ.px->buff[0].b = 4
+ZZZ.px->buff[1].a = 30
+ZZZ.px->buff[1].b = 40
 */
 
