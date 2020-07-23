@@ -3,15 +3,17 @@
 
 #include <stdio.h>
 #include <stdarg.h>
-#include <string>
+#include <sstream>
 
 #ifdef DEBUG
 //#define debug((fmt), ...) log("%s:%s(%d) \n" fmt, __FILE__, __func__, __LINE__, ##__VA_ARGS__)
 #define debug(fmt, ...) { \
-    std::string format("%s:%s(%d) "); \
-    format.append(fmt); \
-    format.append("\n"); \
-    log(format.c_str(), __FILE__, __func__, __LINE__, ##__VA_ARGS__); \
+    std::ostringstream ss;
+    ss << "%s::%s(%d) " << fmt << std::endl; \
+//    std::string format("%s:%s(%d) "); \
+//    format.append(fmt); \
+//    format.append("\n"); \
+    log(ss.str().c_str(), __FILE__, __func__, __LINE__, ##__VA_ARGS__); \
 }
 #else
 #define debug(...) /* Do nothing. */
