@@ -8,7 +8,7 @@
 #ifdef DEBUG
 //#define debug((fmt), ...) log("%s:%s(%d) \n" fmt, __FILE__, __func__, __LINE__, ##__VA_ARGS__)
 #define debug(fmt, ...) { \
-    std::ostringstream ss;
+    std::ostringstream ss; \
     ss << "%s::%s(%d) " << fmt << std::endl; \
 //    std::string format("%s:%s(%d) "); \
 //    format.append(fmt); \
