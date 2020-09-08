@@ -1,10 +1,10 @@
 [AkiyukiOkayasu getTimeStamp.cpp](https://gist.github.com/AkiyukiOkayasu/b4051e942e40d53c7463f4057146f7cc)<br/>
 
 <pre>
-#include <string>
-#include <chrono>
-#include <sstream>
-#include <iomanip>
+#include &lt;string&gt;
+#include &lt;chrono&gt;
+#include &lt;sstream&gt;
+#include &lt;iomanip&gt;
 
 std::string getTimeStamp()
 {
