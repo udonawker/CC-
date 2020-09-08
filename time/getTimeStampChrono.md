@@ -52,7 +52,7 @@ int main()
 #else
     //struct tm now_tm{};
     //localtime_s(&now_tm, &now_tt);
-    std::array<char, 1024> buffer {};
+    std::array&lt;char, 1024&gt; buffer {};
     std::strftime(buffer.data(), buffer.size(), "%Y%m%d_%H%M%S", localtime(&now_tt));
     ss << buffer.data();
 #endif
