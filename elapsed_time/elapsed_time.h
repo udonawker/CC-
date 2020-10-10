@@ -1,25 +1,61 @@
-#include <cstdint>
+#include <time.h>
+#include "elapsed_time.h"
 
-class elapsed_time
+elapsed_time::elapsed_time(
+    int accuracy
+)
+    : start_(0.)
 {
-public:
-    typedef enum _ACCURACY {
-        ACCURACY_MSEC,
-        ACCURACY_USEC,
-        ACCURACY_NSEC
-    } ACCURACY;
-private:
-    double          start_;
-    std::uint32_t   accuracy_;
+    switch (accuracy) {
+    case ACCURACY_MSEC:
+        accuracy_ = 1000;
+        break;
+    case ACCURACY_NSEC:
+        accuracy_ = 1000 * 1000 * 1000;
+        break;
+    case ACCURACY_USEC:
+    default:
+        accuracy_ = 1000 * 1000;
+    }
+}
 
-public:
-    elapsed_time(int accuracy = ACCURACY_USEC);
-    elapsed_time(const elapsed_time& elapsed_time);
-    ~elapsed_time();
+elapsed_time::elapsed_time(
+    const elapsed_time& elapsed_time
+)
+    : start_(elapsed_time.start_)
+    , accuracy_(elapsed_time.accuracy_)
+{
+}
 
-    bool            start();
-    std::uint64_t   stop() const;
+elapsed_time::~elapsed_time()
+{
+}
 
-private:
-    inline double   get_current() const;
-};
+bool elapsed_time::start()
+{
+    start_ = get_current();
+
+    return true;
+}
+
+std::uint64_t elapsed_time::stop() const
+{
+    double time = 0.;
+
+    if ((time = get_current()) < start_) {
+        return 0;
+    }
+
+    time -= start_;
+
+    return static_cast<std::uint64_t>(time * accuracy_);
+}
+
+inline double elapsed_time::get_current() const
+{
+    struct timespec ts{};
+
+    ::clock_gettime(CLOCK_MONOTONIC, &ts);
+
+    return ts.tv_sec + ((double)ts.tv_nsec * 1e-9);
+}
