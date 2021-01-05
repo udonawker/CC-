@@ -45,8 +45,10 @@ static int generateDiff(
 
 /*
         std::mt19937 gen{ std::random_device{}() };
-        std::uniform_real_distribution<> dst{ 0, 1 };
-        int random = dst(gen);
+        std::uniform_real_distribution<> dst_real{ 0, 1 };//0.0～1.0 少数
+        std::uniform_int_distribution<> dst_int{ 0, 10 };//0～10 整数
+        double random_real = dst_real(gen);
+        int random_int = dst_int(gen);
 */
 
 int main(int argc, char* argv[])
