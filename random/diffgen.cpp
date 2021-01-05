@@ -43,6 +43,12 @@ static int generateDiff(
     return 0;
 }
 
+/*
+        std::mt19937 gen{ std::random_device{}() };
+        std::uniform_real_distribution<> dst{ 0, 1 };
+        int random = dst(gen);
+*/
+
 int main(int argc, char* argv[])
 {
     if (argc != 3) {
